@@ -19,3 +19,5 @@
 // 변수와 함수 이름에는 캐멀 케이스 사용(ex. nameFirst, mainArticle)
 // eval() 사용 X
 
+const domContainer = document.querySelector('#like_button_container');
+ReactDOM.render(e(LikeButton), domContainer);
