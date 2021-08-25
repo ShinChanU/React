@@ -14,23 +14,27 @@
 <body>
   <div id="root"></div>
   <script type="text/babel">
-    class Hello extends React.Component {
+    class MenuCreate extends React.Component {
       constructor(props) {
         super(props);
         this.state = {
-          liked: false,
-        };
+          clicked: false,
+        }
       }
 
       render() {
-        return <button onClick={
-          () => { this.setState({ liked: true }) }
-        }>{this.state.liked === true ? "liked" : "like"}</button>;
+        return (
+          <div>
+            <button>로그인</button>
+            <button>로그아웃</button>
+          </div>
+        );
       }
     }
+
   </script>
   <script type="text/babel">
-    ReactDOM.render(<Hello />, document.querySelector("#root"));
+    ReactDOM.render(<MenuCreate />, document.querySelector("#root"));
   </script>
 </body>
 
