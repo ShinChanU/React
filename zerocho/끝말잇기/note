@@ -10,3 +10,9 @@
 6. html에서 <head>에서 script 3줄 필요 X, <body>에서 script src="/dist/app.js"
 
 위에것을 CPA, create-react-app
+
+
+    "@babel/core": "^7.15.0",     // 기본적인 바벨(최신 문법)
+    "@babel/preset-env": "^7.15.0",  // 사용자 환경에 따라 맞춰줌
+    "@babel/preset-react": "^7.14.5",   // jsx 바꿔줌
+    "babel-loader": "^8.2.2",    // 바벨 웹팩 연결해줌

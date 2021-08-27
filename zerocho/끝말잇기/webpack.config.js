@@ -11,6 +11,17 @@ module.exports = {
   entry: {
     app: ['./client'], // client.jsx 속에 WordRelay.jsx 있어서 생략
   }, // 입력
+
+  module: {
+    rules: [{
+      test: /\.jsx?/,
+      loader: 'babel-loader',
+      options: {
+        presets: ['@babel/preset-env', '@babel/preset-react'],
+      },
+    }],
+  },
+
   output: {
     path: path.join(__dirname, 'dist'), // C:\users\.... 
     filename: 'app.js'
