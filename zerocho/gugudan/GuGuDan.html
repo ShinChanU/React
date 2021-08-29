@@ -13,44 +13,45 @@
 
 <body>
   <div id="root"></div>
-  <script type="text/babel">
-    // 기존의 class
-    // class Gugudan extends React.Component {
-    //   constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //       first: Math.ceil(Math.random() * 9),
-    //       second: Math.ceil(Math.random() * 9),
-    //       value: '',
-    //       result: '',
-    //     };
-    //   }
+  <script src="./dist/app.js"></script>
+  <!-- <script type="text/babel">
+    기존의 class
+    class Gugudan extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          first: Math.ceil(Math.random() * 9),
+          second: Math.ceil(Math.random() * 9),
+          value: '',
+          result: '',
+        };
+      }
 
-    //   onSubmit = (e) => {
-    //
-    //   };
+      onSubmit = (e) => {
+    
+      };
 
-    //   onChange = (e) => {
-    //     this.setState({ value: e.target.value });
-    //   };
+      onChange = (e) => {
+        this.setState({ value: e.target.value });
+      };
 
-    //   input;
+      input;
 
-    //   render() {
-    //     return (
-    //       <React.Fragment>
-    //         <div>{this.state.first} 곱하기 {this.state.second}는?</div>
-    //         <form onSubmit={this.onSubmit}>
-    //           <input ref={(c) => { this.input = c; }} type="number" value={this.state.value} onChange={this.onChange} />
-    //           <button>입력!</button>
-    //         </form>
-    //         <div>{this.state.result}</div>
-    //       </React.Fragment>
-    //     );
-    //   }
-    // }
+      render() {
+        return (
+          <React.Fragment>
+            <div>{this.state.first} 곱하기 {this.state.second}는?</div>
+            <form onSubmit={this.onSubmit}>
+              <input ref={(c) => { this.input = c; }} type="number" value={this.state.value} onChange={this.onChange} />
+              <button>입력!</button>
+            </form>
+            <div>{this.state.result}</div>
+          </React.Fragment>
+        );
+      }
+    }
 
-    // Hook로 변형
+    Hook로 변형
     const Gugudan = () => {
       const [first, setFirst] = React.useState(Math.ceil(Math.random() * 9));
       const [second, setSecond] = React.useState(Math.ceil(Math.random() * 9));
@@ -88,11 +89,11 @@
         </React.Fragment>
       );
     }
-  </script>
+  </script> -->
   <!-- 리액트는 함수형 컴포넌트를 더 선호, 그래서 class보다 함수형인 hooks 사용을 권장, state는 대괄호로 따로따로 지정 -->
-  <script type="text/babel">
+  <!-- <script type="text/babel">
     ReactDOM.render(<Gugudan />, document.querySelector("#root"));
-  </script>
+  </script> -->
 </body>
 
 </html>
