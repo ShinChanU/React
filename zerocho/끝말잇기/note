@@ -21,3 +21,35 @@
     "@babel/preset-env": "^7.15.0",  // 사용자 환경에 따라 맞춰줌
     "@babel/preset-react": "^7.14.5",   // jsx 바꿔줌
     "babel-loader": "^8.2.2",    // 바벨 웹팩 연결해줌
+
+import와 require    
+
+1. require (node)
+IN NumberBaseball.jsx
+        const React = require('react');
+
+        class NumberBaseball {
+
+        }
+
+        module.exports = NumberBaseball;
+
+IN client.jsx
+        const React = require('react');
+        const ReactDom = require('react-dom');
+        const NumberBaseball = require('./NumberBaseball)
+
+2. import (react에서도 사용 가능)
+IN NumberBaseball.jsx
+        import React from 'react';
+
+        class NumberBaseball extends Components {
+
+        }
+
+        export default NumberBaseball;
+
+IN client.jsx
+        import React from 'react';
+        import ReactDom from 'react-dom';
+        import NumberBaseball from './NumberBaseball';

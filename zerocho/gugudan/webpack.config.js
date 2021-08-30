@@ -1,4 +1,5 @@
 const path = require('path');
+const RefreshWebpackPath = require('@pmmmwh/react-refresh-webpack-plugin');
 
 module.exports = {
   name: 'GuGuDan-setting',
@@ -26,14 +27,27 @@ module.exports = {
           }],
           '@babel/preset-react'
         ],
-        plugins: [],
+        plugins: [
+          '@babel/plugin-proposal-class-properties',
+          'react-refresh/babel',
+        ],
       },
     }]
   },
 
+  plugins: [
+    new RefreshWebpackPath()
+  ],
+
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'app.js',
+    publicPath: '/dist/',
+  },
+
+  devServer: {
+    publicPath: '/dist/',
+    hot: true
   },
 };
 
