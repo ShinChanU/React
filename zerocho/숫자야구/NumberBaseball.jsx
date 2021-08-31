@@ -1,6 +1,8 @@
-const React = require('react');
-const Try = require('./Try');
-const { Component } = React;
+import React, { Component } from 'react';
+import Try from './Try';
+// const React = require('react');
+// const Try = require('./Try');
+// const { Component } = React;
 // const { useState, useRef } = React;
 
 function getNumbers() {
@@ -21,7 +23,6 @@ class NumberBaseball extends Component {
 
   onChangeInput = (e) => {
     e.preventDefault();
-
   };
 
   // 분리 가능
@@ -31,7 +32,7 @@ class NumberBaseball extends Component {
     { fruit: '🍌', taste: '맵다' },
     { fruit: '🍓', taste: '짜다' },
     { fruit: '🥝', taste: '쓰다' },
-    { fruit: '🍑', taste: '떫다' }
+    { fruit: '🍑', taste: '떫다' },
   ];
 
   render() {
@@ -45,7 +46,7 @@ class NumberBaseball extends Component {
         <ul>
           {this.fruits.map((v, i) => {
             return (
-              <Try value={v} index={i} />
+              <Try value={v} index={i} key={v.fruit + v.taste} /> // key는 큰 컴포넌트에 작성
             );
           })}
         </ul>
@@ -54,7 +55,6 @@ class NumberBaseball extends Component {
   }
 }
 
-module.exports = NumberBaseball;
 
 {/* 반복문 map 1. 이차원 배열 (v[0]) */ }
 {/* {[             
@@ -93,3 +93,6 @@ module.exports = NumberBaseball;
 //     );
 //   })
 // }
+
+// module.exports = NumberBaseball;
+export default NumberBaseball;
