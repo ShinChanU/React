@@ -1,0 +1,15 @@
+import React, { Component } from 'react';
+
+class Try extends Component {
+  render() {
+    return (
+      <li key={this.props.value.fruit + this.props.value.taste}>this.props.index: <b>{this.props.value.fruit}은/는</b> {this.props.value.taste}.
+        <div>컨텐츠1</div>
+        <div>컨텐츠2</div>
+        <div>컨텐츠3</div>
+      </li>
+    );
+  }
+}
+
+export default Try;
