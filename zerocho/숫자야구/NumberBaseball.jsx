@@ -95,4 +95,5 @@ class NumberBaseball extends Component {
 // }
 
 // module.exports = NumberBaseball;
+
 export default NumberBaseball;
