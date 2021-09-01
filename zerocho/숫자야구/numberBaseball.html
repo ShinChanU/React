@@ -32,8 +32,39 @@
       answers.push(numbers[index]);
       numbers.splice(index, 1);
     }
+
     console.log('numbers:' + numbers);
     console.log('answers:' + answers);
+
+    const tries = [];
+
+    function checkInput(input) {
+      if (input.length !== 4) {
+        return alert('4자리 숫자를 입력해주세요.');
+      }
+      if (new Set(input).size !== 4) { // set는 중복이 제거된 배열
+        return alert('중복되지 않게 입력해주세요.');
+      }
+      if (tries.includes(input)) { // includes 포함이 되어있는지
+        return alert('이미 시도한 값입니다.');
+      }
+      return true;
+    }
+
+    $form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const value = $input.value;
+      $input.value = '';
+      if (!checkInput(value)) {
+        // 문제있음
+        return;
+      }
+      if (answer.join('') === value) {
+        // 문제없음 
+        tries.push(value);
+      }
+      console.log('tries: ' + tries);
+    });
   </script>
 </body>
 
