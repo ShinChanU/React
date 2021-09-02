@@ -12,6 +12,17 @@ function getNumbers() {
     const chosen = candidate.splice(Math.floor(Math.random() * (9 - i)), 1)[0];
     array.push(chosen);
   }
+  return array;
+}
+
+function checkInput(input) {
+  if (input.length !== 4) {
+    return alert('4자리 숫자를 입력해주세요.');
+  }
+  if (new Set(input).size !== 4) {
+    return alert('중복되지 않게 입력해주세요.');
+  }
+  return true;
 }
 
 class NumberBaseball extends Component {
@@ -23,19 +34,23 @@ class NumberBaseball extends Component {
   };
 
   onSubmitForm = (e) => {
+    // console.log(this.state.tries);
     e.preventDefault();
+    if (!checkInput(this.state.value)) {
+      return;
+    }
     if (this.state.value === this.state.answer.join('')) {
       this.setState({
         result: '홈런',
         tries: [...this.state.tries, { try: this.state.value, result: '홈런!' }],   // 배열 두개를 비교해서 변화를 감지해야함
-      })
+      });
     } else {
       const answerArray = this.state.value.split('').map((v) => parseInt(v));
       let strike = 0;
       let ball = 0;
       if (this.state.tries.length >= 9) {
         this.setState({
-          result: `10번 넘게 틀려서 실패! 답은 ${answer.join(',')} 였습니다!`,
+          result: `10번 넘게 틀려서 실패! 답은 ${this.state.answer.join('')} 였습니다!`,
         });
         alert('게임을 다시 시작합니다!');
         this.setState({
@@ -45,27 +60,33 @@ class NumberBaseball extends Component {
         });
       } else {
         for (let i = 0; i < 4; i++) {
+          // const index = this.state.value.indexOf(this.state.answer[i]);
+          // if (index > -1) {
+          //   if (answerArray[i] === this.state.answer[i]) {
+          //     strike += 1;
+          //   } else if (this.state.answer.includes(answerArray[i])) {
+          //     ball += 1;
+          //   }
+          // }
           if (answerArray[i] === this.state.answer[i]) {
             strike += 1;
-          } else if (this.state.answer.include(answerArray[i])) {
+          } else if (this.state.answer.includes(answerArray[i])) {
             ball += 1;
           }
         }
         this.setState({
           tries: [...this.state.tries, {
-            try: this.state.value, result: `${strike} 스트라이크 ${ball} 볼입니다.`
+            try: this.state.value,
+            result: `${strike} 스트라이크 ${ball} 볼입니다.`
           }],
+          value: '',
         });
       }
-    }
-    if (tries.length >= 9) {
-      const message = document.createTextNode(`패배! 정답은 ${answer.join('')}`);
-      $logs.appendChild(message);
-      return;
     }
   };
 
   onChangeInput = (e) => {
+    console.log(this.state.answer);
     this.setState({
       value: e.target.value,
     });
@@ -90,7 +111,6 @@ class NumberBaseball extends Component {
     );
   }
 }
-
 
 {/* 반복문 map 1. 이차원 배열 (v[0]) */ }
 {/* {[             
