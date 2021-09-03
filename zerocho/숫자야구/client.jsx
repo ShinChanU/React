@@ -1,9 +1,13 @@
-// const React = require('react');
-// const ReactDom = require('react-dom');
-// const NumberBaseball = require('./NumberBaseball');
+// class, import, export default
+// import React from 'react';
+// import ReactDom from 'react-dom';
+// import NumberBaseballClass from './NumberBaseballClass';
 
-import React from 'react';
-import ReactDom from 'react-dom';
-import NumberBaseball from './NumberBaseball';
+// ReactDom.render(<NumberBaseballClass />, document.querySelector("#root"));
 
-ReactDom.render(<NumberBaseball />, document.querySelector("#root"));
+// hooks, require, module.exports
+const React = require('react');
+const ReactDom = require('react-dom');
+const NumberBaseballHooks = require('./NumberBaseballHooks');
+
+ReactDom.render(<NumberBaseballHooks />, document.querySelector("#root"));
