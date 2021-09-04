@@ -12,16 +12,6 @@ function getNumbers() {
   return array;
 }
 
-function checkInput(input) {
-  if (input.length !== 4) {
-    return alert('4자리 숫자를 입력해주세요.');
-  }
-  if (new Set(input).size !== 4) {
-    return alert('중복되지 않게 입력해주세요.');
-  }
-  return true;
-}
-
 class NumberBaseballClass extends Component {
   state = {
     result: '',
@@ -34,9 +24,6 @@ class NumberBaseballClass extends Component {
     const { value, answer, result, tries } = this.state;
     // console.log(tries);
     e.preventDefault();
-    if (!checkInput(value)) {
-      return;
-    }
     if (value === answer.join('')) {
       this.setState({
         result: '홈런',
