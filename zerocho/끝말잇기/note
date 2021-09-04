@@ -2,54 +2,14 @@
 
 웹 팩 사용이유: 여러 js파일을 통합, 분리 관리
 
-1. 만들 폴더 터미널에서 npm init
+1. 만들 폴더 터미널에서 "npm init"
 2. 리액트 설치: npm i react react-dom
 3. 웹팩 설치 : npm i -D webpack webpack-cli
-4. 바벨 설치 : npm i -D @babel/core
-                npm i -D babel-loader
-                npm i -D @babel/preset-env
-                npm i -D @babel/preset-react
-5. js 파일 만들기 : webpack.config.js (속에 module.exports = {};)
-6. jsx 파일 만들기 : client.jsx (속에 const React = require('react); const ReactDom = require('react-dom))
-7. html에서 <head>에서 script 3줄 필요 X, <body>에서 script src="/dist/app.js"
-
+4. js 파일 만들기 : webpack.config.js (속에 module.exports = {};)
+5. jsx 파일 만들기 : client.jsx (속에 const React = require('react); const ReactDom = require('react-dom))
+6. html에서 <head>에서 script 3줄 필요 X, <body>에서 script src="/dist/app.js"
 
 위에것을 CPA, create-react-app
 
 
-    "@babel/core": "^7.15.0",     // 기본적인 바벨(최신 문법)
-    "@babel/preset-env": "^7.15.0",  // 사용자 환경에 따라 맞춰줌
-    "@babel/preset-react": "^7.14.5",   // jsx 바꿔줌
-    "babel-loader": "^8.2.2",    // 바벨 웹팩 연결해줌
-
-import와 require    
-
-1. require (node)
-IN NumberBaseball.jsx
-        const React = require('react');
-
-        class NumberBaseball {
-
-        }
-
-        module.exports = NumberBaseball;
-
-IN client.jsx
-        const React = require('react');
-        const ReactDom = require('react-dom');
-        const NumberBaseball = require('./NumberBaseball)
-
-2. import (react에서도 사용 가능)
-IN NumberBaseball.jsx
-        import React from 'react';
-
-        class NumberBaseball extends Components {
-
-        }
-
-        export default NumberBaseball;
-
-IN client.jsx
-        import React from 'react';
-        import ReactDom from 'react-dom';
-        import NumberBaseball from './NumberBaseball';
+8/26 웹팩 빌드까지 app.js 생성
