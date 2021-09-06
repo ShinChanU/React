@@ -35,10 +35,6 @@ class RSP extends Component {
     this.interval = setInterval(this.changeHand, 100);
   }
 
-  // componentDidUpdate() { // 리렌더링 시
-
-  // }
-
   componentWillUnmount() { // 컴포넌트가 제거되기 직전에 발생, 비동기 요청을 정리할 때 
     clearInterval(this.interval);
   }

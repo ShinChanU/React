@@ -2,6 +2,33 @@ import React, { useState, useRef, useEffect } from 'react';
 
 // hooks의 경우 useEffect 사용
 
+// class와 hooks의 라이프 사이클 비교
+//                        result, imgCoord, score
+// componentDidMount
+// componentDidUpdate
+// componentWillUnmount
+// 위 처럼 3 x 3 표라고 가정하면, class는 가로의 시점에 따라 내용을 각각 분리, hooks는 세로의 state에 따라 각각 분리
+
+// 예)
+// class
+// componentDidMount() {
+//   this.setState({
+//     imgCoord: 3,
+//     score: 2,
+//     result: 1,
+//   })
+// }
+
+// hooks
+// useEffect(() => {
+//   setImgCoord();
+//   setScore();
+// }, [imgCoord, score]);
+// useEffect(() => {
+//   setResult();
+// }, [result]);
+
+
 const rspCoord = {
   바위: '0',
   가위: '-142px',
