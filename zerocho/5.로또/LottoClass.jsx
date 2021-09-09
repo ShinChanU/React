@@ -23,7 +23,7 @@ class LottoClass extends Component {
 
   timeouts = [];
 
-  componentDidMount() {
+  runTimeout = () => {
     const { winNumbers } = this.state;
     for (let i = 0; i < winNumbers.length - 1; i++) {
       this.timeouts[i] = setTimeout(() => {
@@ -42,10 +42,31 @@ class LottoClass extends Component {
     }, 700);
   }
 
+  componentDidMount() { // 라이프 사이클을 console로 찍어가면서 체크하는 것이 좋음
+    console.log("DidMount");
+    this.runTimeout();
+  }
+
+  componentDidUpdate() { // 계속 실행이 되기 때문에 조건문으로 제한을 걸어둬야 함
+    console.log("DidUpdate");
+    if (this.state.winBalls.length === 0)
+      this.runTimeout();
+  }
+
   componentWillUnmount() {
     this.timeouts.forEach(() => {
       clearTimeout(v);
     });
+  }
+
+  onClickRedo = () => {
+    this.setState({
+      winNumbers: getWinNumbers(),
+      winBalls: [],
+      bonus: null,
+      redo: false,
+    });
+    this.timeouts = [];
   }
 
   render() {
@@ -54,6 +75,7 @@ class LottoClass extends Component {
       <>
         <div>당첨 숫자</div>
         <div id="결과창">
+
           {winBalls.map((v) => <Ball key={v} number={v} />)}
         </div>
         <div>보너스</div>
