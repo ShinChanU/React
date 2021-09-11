@@ -10,18 +10,16 @@
 
 <body>
   <script>
-    // const candidate = Array(45).fill().map((v, i) => i + 1);
+    const candidate = Array(45).fill().map((v, i) => i + 1); // candidate배열에 1부터 45까지 넣음
     const shuffle = [];
-    const candidate = [1, 2, 3, 4, 5, 6];
-    console.log(candidate);
-    candidate.splice(0, 5, [1, 2, 3, 4, 5, 100]);
-    console.log(candidate);
-
-    // shuffle.push(candidate.splice(Math.floor(Math.random() * candidate.length), 1)[0]);
-
-    // while (candidate.length > 0) {
-    //   shuffle.push(candidate.splice(Math.floor(Math.random() * candidate.length), 1)[0]);
-    // }
+    while (candidate.length > 0) {  // candidate의 요소들을 랜덤으로 뽑아서 shuffle에 담음
+      shuffle.push(candidate.splice(Math.floor(Math.random() * candidate.length), 1)[0]);
+    }
+    const bonusNumber = shuffle[shuffle.length - 1];
+    console.log(shuffle);
+    console.log(bonusNumber);
+    const winNumbers = shuffle.slice(0, 6).sort((p, c) => p - c);
+    console.log(winNumbers);
 
     // function getWinNumbers() {
     //   console.log('getWinNumbers');

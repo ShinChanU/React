@@ -54,10 +54,8 @@ const RSPHooks = () => {
   const interval = useRef();
 
   useEffect(() => {   // componentDidMount, componentDidUpdate 역할 (1대1 대응은 아님), 생성될때 실행
-    console.log('다시 실행');
     interval.current = setInterval(changeHand, 100);
     return () => { // componentWillUnmount 역할 , 함수가 실행될때 한번 무조건 실행(RSPHooks 함수가 렌더링 될때 마다)
-      console.log('종료');
       clearInterval(interval.current);
     };
   }, [imgCoord]); // 변화하는 state 작성

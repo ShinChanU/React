@@ -1,0 +1,21 @@
+웹팩만들기
+
+웹 팩 사용이유: 여러 js파일을 통합, 분리 관리
+
+1. 만들 폴더 터미널에서 npm init
+2. 리액트 설치: npm i react react-dom
+3. 웹팩 설치 : npm i -D webpack webpack-cli
+              npm i -D @babel/core
+              npm i -D @babel/preset-env
+              npm i -D @babel/preset-react
+              npm i -D react-refresh
+              npm i -D webpack-dev-server
+              npm i -D @pmmmwh/react-refresh-webpack-plugin@0.5.0-rc.5
+              npm i -D babel-loader
+4. js 파일 만들기 : webpack.config.js 빌드 (속에 module.exports = {};)
+5. jsx 파일 만들기 : client.jsx, (component).jsx (속에 const React = require('react); const ReactDom = require('react-dom))
+
+위에것을 CPA, create-react-app
+
+8/26 웹팩 빌드까지 app.js 생성
+9/4  npm 바벨, 핫로딩 추가
