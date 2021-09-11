@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import Table from './Table';
 
-class Tictactoe extends Component {
-  render() {
-    return (
-      <div>
-        Hello !!
-      </div>
-    );
-  }
-}
+const TicTacToe = () => {
+  return (
+    <>
+      <Table />
+      {winner && <div>{winner}님의 승리</div>}
+    </>
+  );
+};
 
-export default Tictactoe;
+export default TicTacToe;

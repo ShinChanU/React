@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import Tictactoe from './Tictaetoe';
+import TicTacToe from './Tictaetoe';
 
-ReactDom.render(<Tictactoe />, document.querySelector("#root"));
+ReactDom.render(<TicTacToe />, document.querySelector("#root"));
