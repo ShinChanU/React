@@ -7,6 +7,7 @@ const Todo = () => {
 
   const onChangeValue = (e) => {
     setValue(e.target.value);
+    setList((prevState) => [...prevState, e.target.value]);
   };
 
   const onSubmitForm = (e) => {
