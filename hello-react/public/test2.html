@@ -11,18 +11,9 @@
 
 <body>
   <script>
-    function WhiteDog() {
-      this.name = '흰둥이';
-      return {
-        name: '검둥이',
-        bark: () => {
-          console.log(this.name + ': 멍멍!');
-        }
-      }
-    }
-
-    const whiteDog = new WhiteDog();
-    whiteDog.bark();
+    const numbers = [1, 2, 3, 4, 5, 6];
+    const result = numbers.filter((v) => v !== 3);
+    console.log(result);
   </script>
 </body>
 
