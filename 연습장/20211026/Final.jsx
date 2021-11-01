@@ -1,12 +1,12 @@
 import React from 'react';
-import UserList from './UserList';
-import CreateUser from './CreateUser';
+import Signup from './Signup';
+import AppLayout from './components/AppLayout';
 
 const Final = () => {
   return (
     <>
-      <CreateUser />
-      <UserList />
+      {/* <AppLayout /> */}
+      <Signup />
     </>
   );
 };
