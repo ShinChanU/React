@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "Lato-Black";
+  src: url(font/BMDOHYEON_ttf.ttf) format('truetype');
+}
+
+.font {
+  color: blue;
+  font-family: "Lato-Black";
+}
