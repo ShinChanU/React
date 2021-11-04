@@ -1,29 +1,24 @@
-import './App.css';
-import { useDispatch, useSelector } from 'react-redux';
+import Header from "./components/Header";
+import DayList from './components/DayList';
+import Day from "./components/Day";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-function App() {
-  const weight = useSelector((state) => state);
-  const dispatch = useDispatch();
-
-  const onClickBtn1 = () => {
-    dispatch({
-      type: '증가'
-    })
-  };
-
-  const onClickBtn2 = () => {
-    dispatch({
-      type: '감소'
-    })
-  };
-
+const App = () => {
   return (
-    <div className="App">
-      <p>몸무게 : {weight}</p>
-      <button onClick={onClickBtn1}>더하기</button>
-      <button onClick={onClickBtn2}>빼기</button>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Header />
+        <Switch>
+          <Route exact path="/">
+            <DayList />
+          </Route>
+          <Route path="/day/:day">
+            <Day />
+          </Route>
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
