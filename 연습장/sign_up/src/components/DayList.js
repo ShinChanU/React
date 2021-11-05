@@ -3,24 +3,15 @@ import { useState, useEffect } from 'react';
 
 export default function DayList() {
   const [days, setDays] = useState([]);
-  const [count, setCount] = useState(0);
-
-  const onClick = () => {
-    setCount(count + 1);
-  };
-
-  const onClick2 = () => {
-    setDays([
-      ...days,
-      {
-        id: Math.random(),
-        day: 1,
-      },
-    ])
-  };
 
   useEffect(() => {
-    console.log("count change");
+    fetch('http://localhost:3001/days') // 비동기 통신을 위해
+      .then(res => {
+        return res.json(); // response는 http 응답이기때문에 json으로 변환 필요, promise를 반환해줌
+      })
+      .then(data => {
+        setDays(data);
+      })
   }, []);
 
   return (
@@ -33,8 +24,6 @@ export default function DayList() {
         ))
         }
       </ul>
-      <button onClick={onClick}>{count}</button>
-      <button onClick={onClick2}>Day change</button>
     </>
   );
 }

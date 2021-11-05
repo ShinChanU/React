@@ -1,0 +1,37 @@
+{
+  "members": [
+    {
+      "id": 1,
+      "email": "tlscksdn@naver.com",
+      "name": "신찬우",
+      "password": "cksdn963",
+      "isDone": true
+    },
+    {
+      "id": 2,
+      "email": "ghdrlfehd@naver.com",
+      "name": "홍길동",
+      "password": "rlfehd123",
+      "isDone": true
+    },
+    {
+      "id": 3,
+      "email": "rlacjftn@naver.com",
+      "name": "김철수",
+      "password": "cjftn567",
+      "isDone": true
+    },
+    {
+      "id": 4,
+      "email": "rladudgml@naver.com",
+      "name": "김영희",
+      "password": "dudgml789",
+      "isDone": true
+    },
+    {
+      "email": "asdasd",
+      "password": "1231234",
+      "id": 5
+    }
+  ]
+}
