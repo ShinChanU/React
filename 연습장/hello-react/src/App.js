@@ -1,23 +1,11 @@
-import LoginPage from './pages/LoginPage';
-import JoinPage from './pages/JoinPage';
-import CMInput from './pages/components/CMInput';
-import CMButton from './pages/components/CMButton';
+import SignUp from './components/SignUp';
 
-function App() {
-  const container = {
-    backgroundColor: 'antiquewhite',
-    width: '80%',
-    margin: '0 auto',
-  };
-
+const App = () => {
   return (
-    <div style={container}>
-      <LoginPage />
-      <hr />
-      <JoinPage />
-      <hr />
-    </div>
+    <>
+      <SignUp />
+    </>
   );
-}
+};
 
 export default App;

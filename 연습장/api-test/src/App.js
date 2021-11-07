@@ -1,17 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
+import SignUp from './components/SignUp';
 
-function App() {
-  const [value, setValue] = useState('');
-  useEffect(() => {
-    console.log(value);
-  }, []);
-
+const App = () => {
   return (
-    <div>
-      <p>와우</p>
-    </div>
+    <>
+      <SignUp />
+    </>
   );
-}
+};
 
 export default App;

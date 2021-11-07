@@ -1,0 +1,22 @@
+{
+  "members": [
+    {
+      "email": "rladudgml@naver.com",
+      "password": "dudgml789",
+      "isDone": true,
+      "id": 1
+    },
+    {
+      "email": "ghdrlfehd@naver.com",
+      "password": "rlfehd123",
+      "isDone": true,
+      "id": 2
+    },
+    {
+      "email": "rlacjftn@naver.com",
+      "password": "cjftn567",
+      "isDone": true,
+      "id": 3
+    }
+  ]
+}
