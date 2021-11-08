@@ -1,3 +1,5 @@
+import { createStore } from 'redux';
+
 const divToggle = document.querySelector(".toggle");
 const counter = document.querySelector("h1");
 const btnIncrease = document.querySelector("#increase");
@@ -22,20 +24,45 @@ function reducer(state = initialState, action) {
   switch (action.type) {
     case TOGGLE_SWITCH:
       return {
-        …state, // 불변성 유지를 해 주어야 합니다.
+        ...state, // 불변성 유지를 해 주어야 합니다.
         toggle: !state.toggle
       };
     case INCREASE:
       return {
-        …state,
+        ...state,
         counter: state.counter + action.difference
       };
     case DECREASE:
       return {
-        …state,
+        ...state,
         counter: state.counter - 1
       };
     default:
       return state;
   }
 }
+
+const store = createStore(reducer);
+
+const render = () => {
+  const state = store.getState();
+  if (state.toggle) {
+    divToggle.classList.add('active');
+  } else {
+    divToggle.classList.remove('active');
+  }
+  counter.innerText = state.counter;
+};
+
+render();
+store.subscribe(render);
+
+divToggle.onclick = () => {
+  store.dispatch(toggleSwitch());
+};
+btnIncrease.onclick = () => {
+  store.dispatch(increase(1));
+};
+btnDecrease.onclick = () => {
+  store.dispatch(decrease());
+};
