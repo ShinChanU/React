@@ -41,7 +41,7 @@ const initialState = {
       id: 2,
       text: '리액트와 리덕스 사용하기',
       done: false
-    }
+    },
   ]
 };
 
